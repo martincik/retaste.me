@@ -1,0 +1,168 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  common:
+    show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    confirm_question: "Are you sure?"
+    back: "Back"
+    create: "Create"
+    update: "Update"
+    name: "Name"
+    amount: "Amount"
+    currency: "Currency"
+    account: 'Account'
+    login: "Login"
+    logout: "Logout"
+    email: "Email"
+    regenerate: 'Regenerate'
+    upload: "Upload"
+    cancel: "Cancel"
+    mandatory_fields: 'All fields marked with red <strong style="color: #f00;">color</strong> are mandatory.'
+    created_at: 'Created at'
+    updated_at: 'Updated at'
+    autocategorization: 'Auto catogorization'
+    language: 'Language'
+    year: 'Year'
+    month: 'Month'
+    week: 'Week'
+    filter: 'Filter'
+    import: 'Import'
+    
+  controller:
+    accounts:
+      create:
+        notice: 'Account was successfully created.'
+      update:
+        notice: "Account was successfully updated."
+      import:
+        notice: "Transactions imported successfully."
+        errors: "Couldn't import file because of error(s): {{errors}}"
+      delete:
+        errors: "You can't delete last account."
+    transactions:
+      create:
+        notice: 'Transaction was successfully created.'
+      update:
+        notice: 'Transaction was successfully updated.'
+    currencies:
+      create:
+        notice: 'Currency was successfully created.'
+      update:
+        notice: 'Currency was successfully updated.'
+    users:
+      create:
+        notice: 'User profile successfully created.'
+      update:
+        notice: 'User profile successfully updated.'
+    api_token:
+      update:
+        notice: 'API key was successfully updated.'
+    autocategorization:
+      create:
+        notice: 'Autocategorization was successfully created.'
+      update:
+        notice: 'Autocategorization was successfully updated.'
+    user_sessions:
+      create:
+        notice: "Email address already exists in the system with other service login."
+        warning: "Please fill in your profile and than you can continue."
+    imports:
+      create:
+        notice: "Import was successfully created."
+        errors:
+          import_type: "Sorry something went wrong with import type, please contact our support at support@ispend.org!"
+          upload_file: "Sorry something went wrong with uploaded file, please contact our support at support@ispend.org!"
+          transaction: "Sorry couldn't create transaction: {{message}}"
+          class_name: "Import type {{import_class_name}} not supported!"
+
+  model:
+    autocategorizations:
+      equality: "equal"
+      substring: "substring"
+  view:
+    accounts:
+      empty: "No accounts available! You can create new one by clicking on {{link}} link."
+      listing: "Listing accounts"
+      new: "New account"
+      editing: "Editing account"
+      title: "Accounts"
+      destroy: "Destroy account"
+    
+    transactions:
+      listing: "Transactions"
+      new: "New transaction"
+      editing: "Editing transaction"
+      spent_at: "Spent at"
+      tags: "Tags"
+      title: "Transactions"
+      autocategorization: "Autocategerization"
+      category: "Category"
+      select_category: "Select category"
+    
+    currencies:
+      listing: "Listing currencies"
+      new: "New currency"
+      editing: "Editing currency"
+      code: "Code"
+      title: "Currencies"
+      
+    users:
+      listing: "Listing users"
+      editing: "Editing user"
+      username: "Username"
+      title: "Users"
+      user: "User"
+      api_key: "API key"
+    
+    profile:
+      title: "Profile"
+      
+    autocategorizations:
+      empty: "No auto categorizations available! You can create new one by clicking on {{link}} link."
+      listing: "Listing categorization"
+      new: "New auto categorization"
+      editing: "Editing auto categorization"
+      equation: "Equation"
+      tags: "Tags"
+      title: "Auto Categorization"
+      category: "Category"
+      compare_note: "Name is the value that we use to compare the transactions names."
+    
+    reports:
+      new: "New report"
+      title: "Reports"
+    
+    dashboard:
+      title: "Dashboard"
+   
+    imports:
+      listing: "Imports"
+      editing: "Editing imports"
+      created_at: "Created at"
+      exclude: "Exclude"
+      include: "Include"
+      title: "Imports"
+      type: "Import type"
+      file: "File to import"
+      new: "New import"
+      
+    reports:
+      title: 'Reports'
+      week: 'Week'
+      month: 'Month'
+      year: 'Year'
+      range:
+        tag: 'Tag'
+        sum: 'Sum'
+        cat: 'Category'
+
+    categories:
+      listing: "Categories"
+      new: "New category"
+      editing: "Editing category"
+      title: "Categories"
+      number: "Number of transactions"
+      count: "You have {{actual_count}} of {{max_count}} possible categories."

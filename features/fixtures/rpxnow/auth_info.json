@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "verifiedEmail": "ladislav.martincik@gmail.com",
+    "name": {
+      "givenName": "Ladislav",
+      "familyName": "Martincik",
+      "formatted": "Ladislav Martincik"
+    },
+    "displayName": "ladislav.martincik",
+    "preferredUsername": "ladislav.martincik",
+    "providerName": "Google",
+    "identifier": "https:\/\/www.google.com\/accounts\/o8\/id?id=AItOawkp2mIlMY0AAoTybC13TUnV3fPhtzdHTTM",
+    "email": "ladislav.martincik@gmail.com"
+  },
+  "stat": "ok"
+}

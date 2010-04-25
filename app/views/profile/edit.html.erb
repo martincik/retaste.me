@@ -1,0 +1,9 @@
+<h1><%=t 'view.profile.title' %></h1>
+<br />
+
+<%= error_messages_for :user %>
+
+<% form_for(:user, @user, :url => update_profile_path, :html => { :method => :put, :class => 'common-form' }) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= f.submit t('common.update'), :class => 'submit' %>
+<% end %>
