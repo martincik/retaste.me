@@ -1,5 +1,4 @@
 class ProfileController < ApplicationController
-
   skip_before_filter :account_required
 
   def new
@@ -13,7 +12,7 @@ class ProfileController < ApplicationController
     @user = Context.user
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = t('controller.users.create.notice')
+        flash[:notice] = t('controller.profile.create.notice')
         format.html { redirect_to root_path }
         format.xml { head :ok }
         format.json { head :ok }
@@ -33,7 +32,7 @@ class ProfileController < ApplicationController
     @user = Context.user
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash.now[:notice] = t('controller.users.update.notice')
+        flash.now[:notice] = t('controller.profile.update.notice')
         format.html { render :action => "edit" }
         format.xml  { head :ok }
         format.json  { head :ok }

@@ -1,158 +1,26 @@
 cz:
   common:
-    show: "Detail"
-    edit: "Editovat"
-    destroy: "Smazat"
-    confirm_question: "Jste si jistý?"
-    back: "Zpět"
-    create: "Vytvořit"
-    update: "Upravit"
     name: "Jméno"
-    amount: "Částka"
-    currency: "Měna"
-    account: 'Účet'
-    login: "Příhlasit"
+    login: "Přihlásit"
     logout: "Odhlásit"
     email: "Email"
-    regenerate: 'Vygenerovat'
-    upload: "Nahraj"
-    cancel: "Zrušit"
-    mandatory_fields: 'Všechny políčka označeny <strong style="color: #f00;">červeně</strong> jsou povinná.'
-    created_at: 'Vytvořeno'
-    updated_at: 'Upraveno'
-    autocategorization: 'Automatické kategorizování'
-    language: 'Jazyk'
-    year: 'Rok'
-    month: 'Měsíc'
-    week: 'Týden'
-    filter: 'Filtruj'
-    import: 'Import'
-  
+    mandatory_fields: 'Všechny položky označeny <strong style="color: #f00;">červeným písmem</strong> jsou povinné.'
+    update: "Upravit"
+    
   controller:
-    accounts:
+    profile:
       create:
-        notice: 'Účet byl úspěšně vytvořen.'
+        notice: 'Profile úspěšně vytvořen.'
       update:
-        notice: 'Účet byl úspěšně upraven.'
-      import:
-        notice: "Transakce byly úspěšně importovány."
-        errors: "Nepodařilo se importovat soubor pro následující chyby: {{errors}}"
-      delete:
-        errors: "Nelze smazat poslední účet."
-    transactions:
-      create:
-        notice: 'Transakce byla úspěšně vytvořena.'
-      update:
-        notice: 'Transakce byla úspěšně upravena.'
-    currencies:
-      create:
-        notice: 'Měna byla úspěšně vytvořena.'
-      update:
-        notice: 'Měna byla úspěšně upravena.'
-    users:
-      create:
-        notice: 'Uživatel byl úspěšně vytvořen.'
-      update:
-        notice: 'Uživatel byl úspěšně upraven.'
-    api_token:
-      update:
-        notice: 'Klíč pro API byl úspěšně vygenerován.'
-    autocategorization:
-      create:
-        notice: 'Automatická kategorie byla úspěšně vytvořena.'
-      update:
-        notice: 'Automatická kategorie byla úspěšně upravena.'
-    user_sessions:
-      create:
-        notice: "Emailová adresa již v systému existuje s jinou přihlašovací službou."
-        warning: "Prosím vyplňte svůj profil a pak můžete pokračovat."
-    imports:
-      create:
-        notice: "Import byl úspěšně vytvořen."
-        errors:
-          import_type: "Omlouváme se ale něco je špatně s typem importu, prosím kontaktujte naši podporu support@ispend.org!"
-          upload_file: "Omlouváme se ale něco je špatně s nahrávaným souborem, prosím kontaktujte naši podporu support@ispend.org!"
-          transaction: "Omlouváme se ale nešlo vytvořit transakci: {{message}}"
-          class_name: "Importovaný typ {{import_class_name}} není podporován!"
-  
+        notice: 'Profile úspěšně upraven.'
+        
+  user_sessions:
+    create:
+      notice: "Emailová adresa již v systému existuje a je použita s jinou službou než jste použili pro přihlášení."
+      warning: "Prosím vyplňte váš profil a pak můžete pokračovat."
+
   model:
-    autocategorizations:
-      equality: "stejný řetězec"
-      substring: "podřetězec"
   view:
-    accounts:
-      empty: "Prozatím nemáte žádné konto vytvořeno! Nové můžete vytvořit kliknutím na odkaz {{link}}."
-      listing: "Seznam účet"
-      new: "Nový účet"
-      editing: "Editace účtu"
-      title: "Účty"
-      destroy: "Smazat účet"
-    
-    transactions:
-      listing: "Transakce"
-      new: "Nová transakce"
-      editing: "Editace transakce"
-      spent_at: "Utraceno v"
-      tags: "Tagy"
-      title: "Transakce"
-      autocategorization: "Automatické kategorizování"
-      category: "Kategorie"
-      select_category: "Vyberte kategorii"
-      
-    users:
-      listing: "Seznam uživatelů"
-      editing: "Editace uživatele"
-      username: "Uživatelské jméno"
-      title: "Uživatelé"
-      user: "Uživatel"
-      api_key: "API klíč"
-    
     profile:
       title: "Profil"
-    
-    autocategorizations:
-      empty: "Nemáte vytvořené žádné automatické kategorie! Nové můžete vytvořit kliknutím na odkaz {{link}}."
-      listing: "Seznam automatických kategorií"
-      new: "Nová automatická kategorie"
-      editing: "Editace automatické kategorie"
-      equation: "Metoda pro porovnávání"
-      tags: "Tagy"
-      title: "Automatické kategorie"
-      category: "Kategorie"
-      compare_note: "Jméno je hodnota se kterou porovnáváme názvy transakcí."
-
-    reports:
-      new: "Nový report"
-      title: "Reporty"
-    
-    dashboard:
-      title: "Souhrn"
-    
-    imports:
-      listing: "Importy"
-      editing: "Editace importu"
-      title: "Importy"
-      created_at: "Vytvořeno v"
-      exclude: "Nezobrazovat"
-      include: "Zobrazovat"
-      type: "Typ importu"
-      file: "Soubor pro import"
-      new: "Nový import"
-      
-    reports:
-      title: 'Reporty'
-      week: 'Týden'
-      month: 'Měsíc'
-      year: 'Rok'
-      range:
-        tag: 'Tag'
-        sum: 'Sum'
-        cat: 'Kategorie'
-
-    categories:
-      listing: "Kategorie"
-      new: "Nová kategorije"
-      editing: "Editace kategorie"
-      title: "Kategorie"
-      number: "Počet transakcí"
-      count: "Máte vytvořeny {{actual_count}} z {{max_count}} kategorií."
+      username: "Uživatelské jméno"

@@ -1,7 +1,7 @@
 Feature: Profile
   In order manage user profile
   as a user
-  wants profile page 
+  wants profile page with form
 
   Scenario: Edit user
     Given a user is logged in as user
@@ -10,7 +10,7 @@ Feature: Profile
       And I fill in "Name" with "Ladislav Martincik"
       And I fill in "Email" with "ladislav.martincik@gmail.com"
       And I press "Update"
-    Then I should see "User profile successfully updated."
+    Then I should see "Profile successfully updated."
     
   Scenario: Edit user with blank email
     Given a user is logged in as user
@@ -26,5 +26,5 @@ Feature: Profile
       And I fill in "Name" with "Petr Zaparka"
       And I fill in "Email" with "netro82@gmail.com"
       And I press "Update"
-    Then I should see "User profile successfully created."
+    Then I should see "Profile successfully created."
     

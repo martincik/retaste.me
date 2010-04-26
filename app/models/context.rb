@@ -40,7 +40,7 @@ class Context
       end
 
       def log_vitals
-        log( "api_token:= #{@params[:api_token]} session:= user_id:#{ @session[ :user_id ] } session:= account_id:#{ @session[ :account_id ] } ")
+        log( "api_token:= #{@params[:api_token]} session:= user_id:#{ @session[ :user_id ] }")
       end
 
       def extract_user
