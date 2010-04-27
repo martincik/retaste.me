@@ -15,10 +15,10 @@ en:
       update:
         notice: 'Profile successfully updated.'
         
-  user_sessions:
-    create:
-      notice: "Email address already exists in the system with other service login."
-      warning: "Please fill in your profile and than you can continue."
+    user_sessions:
+      create:
+        notice: "Email address already exists in the system with other service login."
+        warning: "Please fill in your profile and than you can continue."
 
   model:
   view:

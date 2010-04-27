@@ -6,3 +6,21 @@
 #profile {
 	width: 600px;
 }
+
+#topbar {
+  color: #fff;
+  margin: 0 auto;
+}
+
+#info {
+  float: left;
+  width: 30%;
+	padding: 20px;
+}
+
+#account-info {
+  float: right;
+  width: 50%;
+  text-align: right;
+	padding: 20px 10px;
+}

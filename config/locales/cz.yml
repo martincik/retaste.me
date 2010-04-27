@@ -15,10 +15,10 @@ cz:
       update:
         notice: 'Profile úspěšně upraven.'
         
-  user_sessions:
-    create:
-      notice: "Emailová adresa již v systému existuje a je použita s jinou službou než jste použili pro přihlášení."
-      warning: "Prosím vyplňte váš profil a pak můžete pokračovat."
+    user_sessions:
+      create:
+        notice: "Emailová adresa již v systému existuje a je použita s jinou službou než jste použili pro přihlášení."
+        warning: "Prosím vyplňte váš profil a pak můžete pokračovat."
 
   model:
   view:
