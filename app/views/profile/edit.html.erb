@@ -1,9 +1,22 @@
-<h1><%=t 'view.profile.title' %></h1>
-<br />
-
 <%= error_messages_for :user %>
 
-<% form_for(:user, @user, :url => update_profile_path, :html => { :method => :put, :class => 'common-form' }) do |f| %>
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  <%= f.submit t('common.update'), :class => 'submit' %>
-<% end %>
+<div id="profile">
+  <% form_for(:user, @user, :url => update_profile_path, :html => { :method => :put, :id => 'profileform', :class => 'common-form' }) do |f| %>
+
+  <table cellpadding="0" cellspacing="0">
+  <tbody>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+  
+    <tr class="clean">
+      <th>&nbsp;</th>
+      <td>
+        <%= f.submit t('common.update') + ' &rarr;', :class => 'orange awesome' %>&nbsp;&nbsp;or&nbsp;<%= link_to 'cancel', root_path %>
+      </td>
+    </tr>
+
+  </tbody>
+  </table>
+
+  <% end %>
+</div>

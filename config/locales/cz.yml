@@ -6,6 +6,7 @@ cz:
     email: "Email"
     mandatory_fields: 'Všechny položky označeny <strong style="color: #f00;">červeným písmem</strong> jsou povinné.'
     update: "Upravit"
+    create: "Vytvořit"
     
   controller:
     profile:

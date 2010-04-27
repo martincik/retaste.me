@@ -25,6 +25,6 @@ Feature: Profile
     When I fill in "Username" with "Netro"
       And I fill in "Name" with "Petr Zaparka"
       And I fill in "Email" with "netro82@gmail.com"
-      And I press "Update"
+      And I press "Create"
     Then I should see "Profile successfully created."
     

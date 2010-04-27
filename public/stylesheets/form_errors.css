@@ -1,0 +1,21 @@
+#errorExplanation {
+	padding: 20px 20px;
+  border: 7px solid red;
+  background: #424242; 
+  -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+#errorExplanation h2 {
+  color: #f00;
+}
+
+#errorExplanation p {
+  padding: 10px 0 0 10px;  
+}
+
+#errorExplanation ul {
+  padding-left: 30px;
+}

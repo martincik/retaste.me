@@ -7,21 +7,20 @@
   text-align: center;
   width: 100%;
   z-index: 100;
-  color: #333333;
+  color: #fff;
   display: none;
-  border-bottom: 1px dashed #555;
   padding: 20px 0;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 #flash_notice {
-  background-color: #C8FFBF;
+  background-color: #1F1F1F;
 }
 
 #flash_warning {
-  background-color: #FFF9BF;
+  background-color: #1F1F1F;
 }
 
 #flash_error {
-  background-color: #FFD1BF;
+  background-color: #1F1F1F;
 }

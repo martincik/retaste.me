@@ -1,0 +1,95 @@
+.awesome, .awesome:visited {
+  -moz-background-clip: border;
+  -moz-background-inline-policy: continuous;
+  -moz-background-origin: padding;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+  background: #222222 url(/images/alert-overlay.png) repeat-x scroll 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 10px 8px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+	text-transform: uppercase;
+	font-size: 11px;
+	border-style: hidden;
+}
+
+.awesome:hover {
+  background-color: #111; 
+	color: #fff;
+	text-decoration: none;
+}
+
+.awesome:active {
+  top: 1px;
+}
+
+.small.awesome, .small.awesome:visited {
+  font-size: 11px;
+}
+
+.awesome, .awesome:visited, .medium.awesome, .medium.awesome:visited {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+.large.awesome, .large.awesome:visited {
+  font-size: 14pt;
+  padding: 8px 14px 9px;
+}
+
+.green.awesome, .green.awesome:visited {
+  background-color: #91bd09;
+}
+
+.green.awesome:hover {
+  background-color: #749a02;
+}
+
+.blue.awesome, .blue.awesome:visited {
+  background-color: #2daebf;
+}
+
+.blue.awesome:hover {
+  background-color: #007d9a;
+}
+
+.red.awesome, .red.awesome:visited {
+  background-color: #e33100;
+}
+
+.red.awesome:hover {
+ 	background-color: #872300;
+}
+
+.magenta.awesome, .magenta.awesome:visited {
+  background-color: #a9014b;
+}
+
+.magenta.awesome:hover {
+  background-color: #630030;
+}
+
+.orange.awesome, .orange.awesome:visited {
+  background-color: #ff5c00;
+}
+
+.orange.awesome:hover {
+  background-color: #d45500;
+}
+
+.yellow.awesome, .yellow.awesome:visited {
+  background-color: #ffb515;
+}
+
+.yellow.awesome:hover {
+  background-color: #fc9200;
+}

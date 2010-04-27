@@ -56,9 +56,7 @@ end
 
 def login_as(username = nil)
   user = Factory(:user, username ? { :username => username } : {})
-  account = Factory(:account, {:user_id => user.id})
   session[:user_id] = user.id
-  session[:account_id] = account.id
   user
 end
 
