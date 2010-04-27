@@ -1,5 +1,6 @@
 #flash_warning, #flash_notice, #flash_error {
   font-weight: bold;
+	font-size: 14pt;
   left: 0;
   top: 0;
   padding: 5px 0;
@@ -10,17 +11,17 @@
   color: #fff;
   display: none;
   padding: 20px 0;
-  opacity: 0.5;
+  opacity: 0.9;
 }
 
 #flash_notice {
-  background-color: #1F1F1F;
+  background-color: #004F00;
 }
 
 #flash_warning {
-  background-color: #1F1F1F;
+  background-color: #00004F;
 }
 
 #flash_error {
-  background-color: #1F1F1F;
+  background-color: #4F0000;
 }
