@@ -7,6 +7,8 @@
   <meta http-equiv="imagetoolbar" content="no" />
   <meta name="robots" content="all" />
 
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
   <%= stylesheet_link_tag 'all' %>
 
   <script src="/javascripts/jquery-1.4.1.js" type="text/javascript"></script>
@@ -44,9 +46,12 @@
         <div id="main-content" style="min-height: 300px">
           <%= yield %>
         </div>
-
       </div>
-
+      
+      <div id="footer">
+        &copy; 2010 Ladislav Martinčík (@martincik).<br />
+        Logo is from <a href="http://www.iconeden.com/icon/yummy-free-icons.html">Yummy icon set</a> by <a href="http://www.iconeden.com">iconeden</a>.
+      </div>
     </div>
 
   </div><!-- container -->
