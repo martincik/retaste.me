@@ -21,14 +21,6 @@ class Context
       @user = user
     end
     
-    def account
-      @account
-    end
-    
-    def account=( account )
-      @account = account
-    end
-
     private
 
       def logger

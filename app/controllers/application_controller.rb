@@ -21,10 +21,6 @@ class ApplicationController < ActionController::Base
     redirect_to login_url if Context.user.nil?
   end
 
-  def current_page_path(options={})
-    url_for( {:controller => self.controller_name, :action => self.action_name}.merge(options) )
-  end
-
   protected
 
     def set_context
