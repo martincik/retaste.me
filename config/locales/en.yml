@@ -25,3 +25,8 @@ en:
     profile:
       title: "Profile"
       username: "Username"
+    delicious:
+      v1title: "Delicious (API v1)"
+      v2title: "Delicious (API v2 - Yahoo! OAuth)"
+      login: "Login"
+      password: "Password"

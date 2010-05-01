@@ -1,0 +1,20 @@
+<tr>
+  <th>&nbsp;</th>
+  <td class="left" style="width: 100%;">
+    <h1><%=t 'view.delicious.v1title' %></h1>
+  </td>
+</tr>
+
+<tr>
+  <th><label for="delicious_login" class="mandatory"><%=t 'view.delicious.login' %></label><span class="help">Login name</span></th>
+  <td><%= f.text_field :login, :class => 'field' %></td>
+  <td class="helper" rowspan="4">
+    <%=raw t('common.mandatory_fields') %>
+  </td>
+</tr>
+
+<tr>
+  <th><label for="delicious_password" class="mandatory"><%=t 'view.delicious.password' %></label></th>
+  <td><%= f.password_field :password, :class => 'field' %></td>
+</tr>
+

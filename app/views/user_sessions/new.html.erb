@@ -1,1 +1,34 @@
-<%= raw RPXNow.popup_code(t('common.login'), 'retasteme', rpx_token_url, :html => { :class => 'awesome blue large' }) %>
+<div class="box">
+  <h2>What?</h2>
+  <p>
+    This is very simple application allowing users of <a href="http:/delicious.com">del.ico.us</a> to be awesome in 
+    reviewing their bookmarks on weekly basis.
+  </p>
+  <br />
+  <h2>Why?</h2>
+  <p>
+    I'm crazy maniac bookmarking every week around 15 web pages. Many times I don't have time to 
+    review my bookmarks and they are lying forgotten in my gallery of bookmarks once for all. First of all
+    I build this service for me, but maybe there're others that could appreciate it also.
+  </p>
+  <br />
+  <h2>How?</h2>
+  <p>
+    <ol style="margin: 0;padding-left: 30px;">
+      <li>You need to be <a href="http://delicious.com">delicious.com</a> user</li>
+      <li><%=raw RPXNow.popup_code('Login to retastme.com', 'retasteme', rpx_token_url) %> and insert your credentials for delicious.com</li>
+      <li>Once a week you'll receive email with all the bookmarks for past week</li>
+    </ol>
+  </p>
+  <br />
+  <h2>Who?</h2>
+  <p class="clearfix">
+    <img style="float: left; padding: 0 10px 10px 0;" src="http://a1.twimg.com/profile_images/548285710/Laco09_bigger.jpg"> I'm Ladislav Martincik.
+    Living in Barcelona, Spain. You can start dialog with me via <a href="http://twitter.com/martincik">Twitter @martincik</a>.
+    If you like what I do you can always make me happy with <a href="http://amzn.com/w/3APMIY8Y76WH4">nice book</a>. I love reading and learning.
+  </p>
+</div>
+
+<div class="box reverse" style="text-align: center;">
+  <span class="big">You don't need to register just &rarr;</span> <%= raw RPXNow.popup_code(t('common.login') + ' &raquo;', 'retasteme', rpx_token_url, :html => { :class => 'awesome green large' }) %>  
+</div>

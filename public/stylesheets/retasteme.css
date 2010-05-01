@@ -31,11 +31,49 @@
 }
 
 #footer {
-	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-family: 'Arial', sans-serif;
 	color: #555;
 	font-size: 12px;
 	text-align: center;
 	padding: 10px 0;
 	line-height: 1.2em;
-	font-style: italic;
+}
+
+#footer a,
+#footer a:hover,
+#footer a:visited {
+	color: #555;
+}
+
+.box {
+  padding: 20px;
+  border: 4px solid #1F1F1F;
+  background: #424242; 
+  -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #ddd;
+	margin-bottom: 10px;
+}
+
+.reverse {
+	background: #ddd;
+	border: 4px solid #ddd;
+	color: #111;
+}
+
+.box h2 { color: #ddd; text-transform: uppercase; }
+
+.box p {
+	padding-top: 10px;
+}
+
+.big {
+	font-size: 16pt;
+}
+
+h1.delicious {
+	background: transparent url('/images/delicious.png') center left no-repeat;
+	padding-left: 40px;
+	line-height: 1.5em;
 }

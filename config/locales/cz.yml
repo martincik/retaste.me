@@ -25,3 +25,7 @@ cz:
     profile:
       title: "Profil"
       username: "Uživatelské jméno"
+    delicious:
+      title: "Delicious"
+      login: "Přihlašovácí jméno"
+      password: "Heslo"      

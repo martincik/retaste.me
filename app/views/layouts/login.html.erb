@@ -30,18 +30,26 @@
       <div id="info">
         retaste.me
       </div>
+      <div id="account-info">
+        <%=raw RPXNow.popup_code('Login &raquo;', 'retasteme', rpx_token_url, :html => { :class => 'awesome small' }) %>
+      </div>
     </div>
   
-    <div id="content" class="clearfix" style="padding-top: 0;">
+    <div id="content" class="clearfix">
   
-      <div id="main" style="width: 800px;">
+      <div id="main">
         
         <div id="main-content">
           <%= yield %>
         </div>
   
       </div>
-
+      
+      <div id="footer">
+        Copyright &copy; 2010 Ladislav Martinčík (<a href="http://twitter.com/martincik">@martincik</a>) - <a href="http:/martincik.com">martincik.com</a><br />
+        Logo icon from <a href="http://www.iconeden.com/icon/yummy-free-icons.html">Yummy icon set</a> by <a href="http://www.iconeden.com">IconEden</a>.
+      </div>
+      
     </div>
   
   </div>

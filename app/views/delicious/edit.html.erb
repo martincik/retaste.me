@@ -1,0 +1,22 @@
+<%= error_messages_for :delicious %>
+
+<div id="delicious">
+  <% form_for(:delicious, @delicious, :url => delicious_path, :html => { :method => :put, :id => 'deliciousform', :class => 'common-form' }) do |f| %>
+
+  <table cellpadding="0" cellspacing="0">
+  <tbody>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+  
+    <tr class="clean">
+      <th>&nbsp;</th>
+      <td>
+        <%= f.submit t('common.update') + ' &rarr;', :class => 'orange awesome' %>&nbsp;&nbsp;or&nbsp;<%= link_to 'cancel', root_path %>
+      </td>
+    </tr>
+
+  </tbody>
+  </table>
+
+  <% end %>
+</div>

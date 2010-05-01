@@ -1,6 +1,4 @@
 class ProfileController < ApplicationController
-  skip_before_filter :account_required
-
   def new
     @user = Context.user
     respond_to do |format|
