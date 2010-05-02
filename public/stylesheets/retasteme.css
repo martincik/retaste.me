@@ -1,7 +1,7 @@
 #container {
 	width: 600px;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 30px;
 }
 
 #profile {
@@ -18,9 +18,17 @@
   width: 30%;
 	padding: 20px;
 	padding-left: 65px;
-	font-family: 'Georgia', serif;
+	font-family: "bello-pro-1", "bello-pro-2", 'Palatino', sans-serif;
 	font-size: 32pt;
 	background: transparent url('/images/retasteme_logo.png') 5px 7px no-repeat;
+}
+
+#info a,
+#info a:hover,
+#info a:visited {
+	text-decoration: none;
+	background: transparent;
+	color: #eee;
 }
 
 #account-info {
@@ -31,7 +39,7 @@
 }
 
 #footer {
-	font-family: 'Arial', sans-serif;
+	font-family: "museo-sans-1","museo-sans-2", "Helvetica Neue", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
 	color: #555;
 	font-size: 12px;
 	text-align: center;
@@ -46,23 +54,32 @@
 }
 
 .box {
-  padding: 20px;
-  border: 4px solid #1F1F1F;
-  background: #424242; 
+	background: #464646;
+	background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#555));
+	background: -moz-linear-gradient(top, #424242, #555);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#424242, endColorstr=#555555);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#424242, endColorstr=#555555)";	
+  padding: 30px;
   -moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	color: #ddd;
 	margin-bottom: 10px;
+  box-shadow: 0px 0px 7px #1F1F1F;
+	-webkit-box-shadow: 0px 0px 7px #1F1F1F;
 }
 
 .reverse {
 	background: #ddd;
-	border: 4px solid #ddd;
+	border: 1px solid #ddd;
 	color: #111;
 }
 
-.box h2 { color: #ddd; text-transform: uppercase; }
+.box h2 { 
+	color: #ddd;
+	font-size: 20pt;
+	font-family: "bree-1","bree-2",sans-serif;
+}
 
 .box p {
 	padding-top: 10px;

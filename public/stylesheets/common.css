@@ -2,16 +2,21 @@ html {
   margin: 0 0 1px 0; /* force FF to show scrollbar to prevent page jumping */
   padding: 0;
   height: 100%;
-	background: #2d2d2d;
 	color: #fff;
+	background: #2d2d2d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2d2d2d), to(#111));
+	background: -moz-linear-gradient(top, #2d2d2d, #111111);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#2d2d2d, endColorstr=#111111);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#2d2d2d, endColorstr=#111111)";
 }
 
 body {
   margin: 0;
   text-align: left;
   padding: 0;
-  font: normal 14px/1.5em "Helvetica Neue", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
-  background: #2d2d2d;
+	font: normal 14px/1.5em "Helvetica Neue", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+	font-family: "museo-sans-1","museo-sans-2", "Helvetica Neue", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+	background: transparent;
   color: #fff;
   min-width: 950px;
 }

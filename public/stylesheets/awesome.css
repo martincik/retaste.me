@@ -6,7 +6,7 @@
 	-moz-border-radius: 7px;
 	-webkit-border-radius: 7px;
 	border-radius: 7px;
-  background: #222222 url(/images/alert-overlay.png) repeat-x scroll 0 0;
+  background: #222222 url('/images/alert-overlay.png') repeat-x scroll 0 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   color: #FFFFFF;
   cursor: pointer;
