@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
+  # Reports
+  map.report 'report/:year/:week', :controller => 'reports', :action => "show"
+
   # Delicious
   map.resource :delicious
 

@@ -15,3 +15,16 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.default_charset = "utf-8"
+ActionMailer::Base.delivery_method = :activerecord
+ActionMailer::Base.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :port => "587",
+  :domain => "retaste.me",
+  :authentication => :plain,
+  :user_name => "ladislav.martincik@retaste.me",
+  :password => "lai4beoha2me",
+  :tls => true
+}

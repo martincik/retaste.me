@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
 
   # Relations
   has_one :delicious, :dependent => :destroy
+  has_many :reports, :dependent => :destroy
   
 end

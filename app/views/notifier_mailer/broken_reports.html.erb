@@ -1,0 +1,13 @@
+<h2>Generated records: <%= @num_reports %></h2>
+<br />
+
+<h2>These reports are broken:</h2>
+<br />
+
+<% @reports.each do |report| -%>
+<p>
+  user ID: <%= report.user.id %>, service ID: <%= report.service.id %>
+  year: <%= report.year %>, week: <%= report.week %>, 
+  errors: <%= report.errors.full_messages %>
+</p>
+<% end -%>

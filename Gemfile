@@ -8,6 +8,9 @@ gem "nokogiri"
 gem "hpricot"
 gem "whenever"
 gem "www-delicious"
+gem "css_parser"
+gem "mail_style"
+gem "ar_mailer" # ar_mailer_rails3 for Rails 3
 
 group :test do
   gem "pickle"
