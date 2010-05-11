@@ -7,7 +7,7 @@ gem "rpx_now"
 gem "nokogiri"
 gem "hpricot"
 gem "whenever"
-gem "www-delicious"
+gem "laco-www-delicious" # My own version with better API support
 gem "css_parser"
 gem "mail_style"
 gem "ar_mailer" # ar_mailer_rails3 for Rails 3
