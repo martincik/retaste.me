@@ -9,6 +9,7 @@ describe NotifierMailer do
     @expected = TMail::Mail.new
     @expected.set_content_type 'text', 'plain', { 'charset' => CHARSET }
     @expected.mime_version = '1.0'
+    Delicious.any_instance.stubs(:validate_account).returns(true)
   end
   
   it "should send email to administrator about broken reports" do

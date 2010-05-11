@@ -1,6 +1,10 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe Report do
+
+  before(:each) do
+    Delicious.any_instance.stubs(:validate_account).returns(true)
+  end
   
   describe "reading generated report" do
   

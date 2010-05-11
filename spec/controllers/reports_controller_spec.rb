@@ -3,6 +3,7 @@ require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 describe ReportsController do
   describe "with #index" do
     before(:each) do
+      Delicious.any_instance.stubs(:validate_account).returns(true)
       Report.delete_all
       @user = login_as
     end
