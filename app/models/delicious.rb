@@ -10,4 +10,19 @@ class Delicious < Service
     end
   end
   
+  def links_for_week(week_number = Date.today.cweek)
+    week_start, week_end = week_start_end(week_number)
+    d = WWW::Delicious.new(login, password)
+    d.posts_all(:fromdt => week_start, :todt => week_end)
+  end
+  
+  private
+  
+    def week_start_end(week_number)
+      year = Time.now.year
+      week_start = Date.commercial( year, week_number, 1 )
+      week_end = Date.commercial( year, week_number, 7 )
+      return week_start.to_time, week_end.to_time
+    end
+  
 end

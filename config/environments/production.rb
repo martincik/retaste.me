@@ -39,3 +39,5 @@ ActionMailer::Base.smtp_settings = {
   :password => "lai4beoha2me",
   :tls => true
 }
+
+ActionMailer::Base.default_url_options[:host] = "retaste.me"

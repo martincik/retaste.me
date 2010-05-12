@@ -12,6 +12,7 @@ describe Report do
       @user = Factory(:user)
       @delicious = Factory(:delicious, :user => @user)
       @report = Factory(:report, :user => @user, :service => @delicious)
+      Report.any_instance.stubs(:presence_of_html_file)
     end
   
     it "is idetifiable by composed_id" do
@@ -35,24 +36,40 @@ describe Report do
       @user = Factory(:user)
       @delicious = Factory(:delicious, :user => @user)
       @another_user = Factory(:user, :username => 'another.user')
+      Report.any_instance.stubs(:to_html)
     end
     
     it "for every user and sents email" do
       another_delicious = Factory(:delicious, :user => @another_user)
       
-      NotifierMailer.expects(:deliver_successfully_generated_reports).with(2)
+      NotifierMailer.expects(:deliver_successfully_generated_reports)
       Report.generate_reports_for_current_week.should == []
     end
     
     it "for every user tries to generate report and sents email with the failed once" do
       another_delicious = Factory(:delicious, :user => @another_user)
-      another_delicious.expects(:generate_current_week_report).returns(report = Report.new)
+      another_delicious.expects(:generate_current_week_report).returns(mock(:to_html => true, :save => false, :errors => 'errors'))
       @another_user.expects(:delicious).returns(another_delicious)
 
-      User.expects(:all).returns([@user, @another_user])
-          
-      NotifierMailer.expects(:deliver_broken_reports).with([report], 1)
-      Report.generate_reports_for_current_week.should == [report]
+      User.expects(:all).returns([@another_user, @user])
+
+      NotifierMailer.expects(:deliver_broken_reports)
+      Report.generate_reports_for_current_week.length.should == 1
+    end
+    
+    it "for every user tries to generate report and sents email with the failed once because of to_html exception" do
+      Report.any_instance.expects(:to_html).raises(Exception.new)
+      
+      another_delicious = Factory(:delicious, :user => @another_user)
+      another_delicious.expects(:generate_current_week_report).returns(Report.new)
+      @another_user.expects(:delicious).returns(another_delicious)
+
+      User.expects(:all).returns([@another_user, @user])
+
+      NotifierMailer.expects(:deliver_broken_reports)
+      num_reports = Report.count
+      Report.generate_reports_for_current_week.length.should == 1
+      Report.count.should == num_reports + 1
     end
     
   end

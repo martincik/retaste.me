@@ -13,7 +13,7 @@ class Service < ActiveRecord::Base
   end
   
   def generate_current_week_report
-    report = Report.create(:user => user, 
+    report = Report.new(:user => user, 
       :service => self, 
       :week => Date.today.cweek,
       :year => Date.today.year

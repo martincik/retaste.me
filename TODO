@@ -2,4 +2,4 @@
 * Implement OAuth for API v2
 * Contact Delicious team and inform them about the app
 * Write missing tests (incl. cucumber)
-* Add AJAX checker of correct delicious login credentials
+* Replace gmail.com SMTP login info to retaste.me and also YAML it

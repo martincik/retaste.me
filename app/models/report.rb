@@ -4,11 +4,10 @@ class Report < ActiveRecord::Base
   belongs_to :user
   belongs_to :service
   
-  # Hooks
-  before_save :to_html
-  
   def to_html
-    
+    email = ReportMailer.create_weekly_report(service.links_for_week)
+    File.open(report_file_path, 'w') { |f| f.write(email.body) }    
+    ReportMailer.deliver(email)
   end
   
   def from_html
@@ -21,13 +20,22 @@ class Report < ActiveRecord::Base
     num_reports = 0
     
     User.all.each do |user|
-      report = user.delicious.generate_current_week_report
-      if report.new_record? || !report.errors.empty?
-        broken_reports << report
-        Rails.logger.error "Couldn't save report for user ID: #{user.id} => #{report.errors}"
-      else
-        num_reports += 1
-        Rails.logger.info "Generated report for user ID: #{user.id}, year: #{report.year}, week: #{report.week}"
+      Report.transaction do
+        begin
+          report = user.delicious.generate_current_week_report
+          report.to_html
+          if report.save
+            num_reports += 1
+            Rails.logger.info "Generated report for user ID: #{user.id}, year: #{report.year}, week: #{report.week}"            
+          else
+            broken_reports << report
+            Rails.logger.error "Couldn't save report for user ID: #{user.id}, Errors: #{report.errors}"
+          end
+        rescue Exception => e
+          broken_reports << report
+          Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e.message}"
+          raise ActiveRecord::Rollback
+        end
       end
     end
     

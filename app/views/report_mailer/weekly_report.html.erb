@@ -1,0 +1,10 @@
+<div id="links">
+<% @links.each do |link| %>
+  <div class="link">
+    <span><%= link.time %></span><a href="<%= link.url %>"><%= link.title %></a>
+    <p>
+      <%= link.tags.join(', ') %>
+    </p>
+  </div>
+<% end %>
+</div>
