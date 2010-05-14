@@ -1,0 +1,11 @@
+development:
+  address: "stmp.gmail.com"
+  port: "587"
+  domain: "your.domain"
+  authentication: "plain"
+  user_name: "username"
+  password: "password"
+  tls: true
+  
+production:
+  development

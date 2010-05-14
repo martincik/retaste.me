@@ -1,4 +1,4 @@
-class ReportMailer < ActionMailer::ARMailer
+class ReportMailer < ActionMailer::Base
   layout 'report_mailer'
   
   def weekly_report(links, recipient, sent_at = Time.now)

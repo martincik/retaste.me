@@ -4,6 +4,7 @@ class CreateEmail < ActiveRecord::Migration
       t.string :from, :to
       t.integer :last_send_attempt, :default => 0
       t.text :mail
+      t.datetime :created_on
       
       t.timestamps
     end

@@ -7,10 +7,10 @@ gem "rpx_now"
 gem "nokogiri"
 gem "hpricot"
 gem "whenever"
-gem "laco-www-delicious" # My own version with better API support
+gem "laco-www-delicious", "0.3.3" # My own version with better API support
 gem "css_parser"
 gem "mail_style"
-gem "ar_mailer" # ar_mailer_rails3 for Rails 3
+gem "adzap-ar_mailer"
 
 group :test do
   gem "pickle"

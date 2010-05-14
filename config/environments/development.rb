@@ -16,9 +16,11 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.default_charset = "utf-8"
-ActionMailer::Base.delivery_method = :activerecord
+config.action_mailer.delivery_method = :activerecord
+config.action_mailer.perform_deliveries = true
+config.action_mailer.default_charset = "utf-8"
+
+ActionMailer::Base.default_url_options[:host] = "localhost:3000"
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
   :port => "587",
@@ -28,5 +30,3 @@ ActionMailer::Base.smtp_settings = {
   :password => "lai4beoha2me",
   :tls => true
 }
-
-ActionMailer::Base.default_url_options[:host] = "localhost:3000"

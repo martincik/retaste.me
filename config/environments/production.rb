@@ -25,11 +25,13 @@ config.action_view.cache_template_loading            = true
 # config.action_mailer.raise_delivery_errors = false
 
 # Enable threaded mode
-# config.threadsafe!
+config.threadsafe!
 
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.default_charset = "utf-8"
-ActionMailer::Base.delivery_method = :activerecord
+config.action_mailer.delivery_method = :activerecord
+config.action_mailer.perform_deliveries = true
+config.action_mailer.default_charset = "utf-8"
+
+ActionMailer::Base.default_url_options[:host] = "retaste.me"
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
   :port => "587",
@@ -39,5 +41,3 @@ ActionMailer::Base.smtp_settings = {
   :password => "lai4beoha2me",
   :tls => true
 }
-
-ActionMailer::Base.default_url_options[:host] = "retaste.me"

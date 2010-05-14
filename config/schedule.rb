@@ -18,3 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.hour do
+  command '/usr/bin/ar_sendmail --max-age 0 -o --batch-size 200 -c "/mnt/app/retaste.me/current" -e "production"'
+end
+
+every :sunday, :at => '7am' do # Use any day of the week or :weekend, :weekday
+  runner "Report.generate_reports_for_current_week"
+end

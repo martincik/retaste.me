@@ -5,9 +5,8 @@ class Report < ActiveRecord::Base
   belongs_to :service
   
   def to_html
-    email = ReportMailer.create_weekly_report(service.links_for_week)
-    File.open(report_file_path, 'w') { |f| f.write(email.body) }    
-    ReportMailer.deliver(email)
+    email = ReportMailer.deliver_weekly_report(service.links_for_week, user.email)
+    File.open(report_file_path, 'w') { |f| f.write(email.body) }
   end
   
   def from_html
@@ -33,7 +32,7 @@ class Report < ActiveRecord::Base
           end
         rescue Exception => e
           broken_reports << report
-          Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e.message}"
+          Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e}"
           raise ActiveRecord::Rollback
         end
       end

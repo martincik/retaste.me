@@ -1,4 +1,4 @@
-class NotifierMailer < ActionMailer::ARMailer
+class NotifierMailer < ActionMailer::Base
   layout 'notifier_mailer'
   
   def broken_reports(reports, num_reports, sent_at = Time.now)

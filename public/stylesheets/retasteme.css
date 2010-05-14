@@ -38,9 +38,19 @@
 	padding: 20px 10px;
 }
 
+#account-info span {
+	padding-right: 10px;
+	font-size: 15px;
+}
+
+#account-info span i {
+	text-decoration: line-through;
+	font-style: normal;
+}
+
 #footer {
 	font-family: "museo-sans-1","museo-sans-2", "Helvetica Neue", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
-	color: #555;
+	color: #333;
 	font-size: 12px;
 	text-align: center;
 	padding: 10px 0;
@@ -50,7 +60,7 @@
 #footer a,
 #footer a:hover,
 #footer a:visited {
-	color: #555;
+	color: #333;
 }
 
 .box {
