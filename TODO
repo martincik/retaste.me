@@ -1,5 +1,3 @@
 * Prepare Terms&Conditions with Privacy (see web templates and modify)
 * Implement OAuth for API v2
 * Write missing tests (incl. cucumber)
-* Replace gmail.com SMTP login info to retaste.me and also YAML it
-* Add google analytics tracking
