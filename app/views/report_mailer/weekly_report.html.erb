@@ -1,10 +1,23 @@
+<div id="header">
+  This is your weekly retaste.me report for week <%= Date.today.cweek %> year <%= Date.today.year %>.
+  You can find this report also online at <%= link_to report_url(:week => Date.today.cweek, :year => Date.today.year), report_url(:week => Date.today.cweek, :year => Date.today.year) %>
+</div>
+
 <div id="links">
 <% @links.each do |link| %>
   <div class="link">
-    <span><%= link.time %></span><a href="<%= link.url %>"><%= link.title %></a>
+    <a href="<%= link.url %>"><%= link.title %></a><br />
+    <i>Bookmarked on <%= link.time.to_time.to_s(:email) %></i>
     <p>
-      <%= link.tags.join(', ') %>
+      Tags: 
+      <% link.tags.each do |tag| %>
+        <span><%= tag %></span>
+      <% end %>
     </p>
   </div>
 <% end %>
+</div>
+
+<div id="footer">
+  I don't want to receive this weekly updates please change your settings at <a href="http://retaste.me">retaste.me</a>.
 </div>

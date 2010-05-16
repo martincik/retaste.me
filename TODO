@@ -1,3 +1,4 @@
 * Prepare Terms&Conditions with Privacy (see web templates and modify)
 * Implement OAuth for API v2
 * Write missing tests (incl. cucumber)
+* Add notification email whenever you create new user

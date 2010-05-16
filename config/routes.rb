@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   # Reports
+  map.report_test 'report_test', :controller => 'reports', :action => 'index'
   map.report 'report/:year/:week', :controller => 'reports', :action => "show"
 
   # Delicious

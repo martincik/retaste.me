@@ -1,0 +1,13 @@
+#links {
+	padding: 10px 0;
+}
+
+#links .link {
+	padding: 10px;
+}
+
+#links .link p span {
+	background: #555;
+	color: #eee;
+	padding: 3px 7px;
+}
