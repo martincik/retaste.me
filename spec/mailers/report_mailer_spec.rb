@@ -31,7 +31,7 @@ describe ReportMailer do
     response = ReportMailer.create_weekly_report(links || [], user.email)
     response.encoded.include?('http://').should be_true
     response.encoded.include?('book').should be_true
-    response.encoded.include?('May 12, 16:28').should be_true
+    response.encoded.include?('12 May at 04:28PM').should be_true
     response.encoded.include?('Safari Books Online: Domain Specific Languages').should be_true
   end
   
