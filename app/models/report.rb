@@ -16,6 +16,7 @@ class Report < ActiveRecord::Base
   
   def self.generate_reports_for_current_week
     broken_reports = []
+    exceptions = []
     num_reports = 0
     
     User.all.each do |user|
@@ -32,20 +33,26 @@ class Report < ActiveRecord::Base
             Rails.logger.error "Couldn't save report for user ID: #{user.id}, Errors: #{report.errors}"
           end
         rescue Exception => e
-          broken_reports << report
+          exceptions << e
           Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e}"
           raise ActiveRecord::Rollback
         end
       end
     end
     
-    if broken_reports.empty?
+    if broken_reports.empty? && exceptions.empty?
       NotifierMailer.deliver_successfully_generated_reports(num_reports)
-    else
-      NotifierMailer.deliver_broken_reports(broken_reports, num_reports)
     end
     
-    broken_reports
+    unless broken_reports.empty?
+      NotifierMailer.deliver_broken_reports(broken_reports, num_reports)
+    end
+
+    unless exceptions.empty?
+      NotifierMailer.deliver_exceptions(exceptions)
+    end
+
+    broken_reports.empty? ? exceptions : broken_reports
   end
   
   def composed_id

@@ -4,6 +4,12 @@
 <body>
 <h1>Notification from retaste.me:</h1>
 
-Successfully generated: 2
+<h2>Generated records: 2</h2>
+<br><h2>These reports are broken:</h2>
+<br><p>
+  user ID: <%= user.id %>, service ID: <%= user.delicious.id %>
+  year: <%= report.year %>, week: <%= report.week %>, 
+  errors: full_messages
+</p>
 </body>
 </html>

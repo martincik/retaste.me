@@ -49,11 +49,12 @@ describe Report do
     it "for every user tries to generate report and sents email with the failed once" do
       another_delicious = Factory(:delicious, :user => @another_user)
       another_delicious.expects(:generate_current_week_report).returns(mock(:to_html => true, :save => false, :errors => 'errors'))
-      @another_user.expects(:delicious).returns(another_delicious)
+      @another_user.expects(:delicious).at_least(2).returns(another_delicious)
 
       User.expects(:all).returns([@another_user, @user])
 
       NotifierMailer.expects(:deliver_broken_reports)
+      
       Report.generate_reports_for_current_week.length.should == 1
     end
     
@@ -62,11 +63,11 @@ describe Report do
       
       another_delicious = Factory(:delicious, :user => @another_user)
       another_delicious.expects(:generate_current_week_report).returns(Report.new)
-      @another_user.expects(:delicious).returns(another_delicious)
+      @another_user.expects(:delicious).at_least(2).returns(another_delicious)
 
       User.expects(:all).returns([@another_user, @user])
 
-      NotifierMailer.expects(:deliver_broken_reports)
+      NotifierMailer.expects(:deliver_exceptions)
       num_reports = Report.count
       Report.generate_reports_for_current_week.length.should == 1
       Report.count.should == num_reports + 1

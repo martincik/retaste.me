@@ -1,0 +1,8 @@
+<h2>These exceptions were generated during week <%= Date.today.cweek %>:</h2>
+<br />
+
+<% @exceptions.each do |exception| -%>
+<p>
+  <%= exception %>
+</p>
+<% end -%>
