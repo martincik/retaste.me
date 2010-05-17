@@ -66,7 +66,6 @@ namespace :bundler do
     run "cd #{current_release} && bundle unlock;"
   end
 end
-
 after 'deploy:update_code', 'bundler:bundle_new_release'
 
 namespace :deploy do
@@ -75,5 +74,9 @@ namespace :deploy do
     run "cd #{release_path} && bundle exec whenever --update-crontab #{application}"
   end
 end
-
 after "deploy:symlink", "deploy:update_crontab"
+
+task :link_data_directory do
+  run "ln -s #{shared_path}/data #{release_path}/data"
+end
+after "deploy:symlink", :link_data_directory
