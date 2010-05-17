@@ -21,6 +21,7 @@ class Report < ActiveRecord::Base
     User.all.each do |user|
       Report.transaction do
         begin
+          next if user.delicious.nil?
           report = user.delicious.generate_current_week_report
           report.to_html
           if report.save
