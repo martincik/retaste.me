@@ -1,4 +1,8 @@
 * Prepare Terms&Conditions with Privacy (see web templates and modify)
+* Only sent email if some links bookmarked or sent email say no bookmarks for this week
+* Write better text about the Delicious usage and flow
+* Sent example email to clients
+* Delete account or service
 * Implement OAuth for API v2
 * Write missing tests (incl. cucumber)
 * Add notification email whenever you create new user
