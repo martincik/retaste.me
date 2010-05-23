@@ -2,6 +2,8 @@ class ReportMailer < ActionMailer::Base
   layout 'report_mailer'
   
   def weekly_report(links, user, recipient, sent_at = Time.now)
+    css :email
+    
     recipients recipient
     subject "retaste.me your Week report ##{Date.today.cweek.to_s}"
     from "no-reply@retaste.me"

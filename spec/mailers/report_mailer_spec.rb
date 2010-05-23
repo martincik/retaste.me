@@ -27,7 +27,7 @@ describe ReportMailer do
         :title => "Safari Books Online: Domain Specific Languages"
       )
     ]
-        
+     
     response = ReportMailer.create_weekly_report(links || [], user, user.email)
     response.encoded.include?('http://').should be_true
     response.encoded.include?('book').should be_true

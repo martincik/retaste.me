@@ -26,7 +26,12 @@ class UserSessionsController < ApplicationController
       flash[:warning] = t('controller.user_sessions.create.warning')
       redirect_to new_profile_path
     else
-      redirect_to root_path
+      if session[:redirect_url]
+        redirect_to session[:redirect_url]
+        session[:redirect_url] = nil
+      else
+        redirect_to root_path
+      end
     end
   end
 

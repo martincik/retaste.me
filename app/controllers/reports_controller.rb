@@ -5,6 +5,7 @@ class ReportsController < ApplicationController
     redirect_to :action => 'show' if RAILS_ENV == 'production'
     
     require 'ostruct'
+    @user = Context.user
     @links = [
       OpenStruct.new(:url => "http://my.safaribooksonline.com/9780132107549#tabfeedbacks",
         :tags => ["book", "tobuy", "dsl", "language"],

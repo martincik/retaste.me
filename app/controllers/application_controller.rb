@@ -18,7 +18,13 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    redirect_to login_url if Context.user.nil?
+    if Context.user.nil?
+      if request.request_uri != root_path
+        session[:redirect_url] = request.request_uri
+      end
+      
+      redirect_to login_url
+    end
   end
 
   protected
