@@ -35,5 +35,15 @@ describe ReportsController do
       response.should redirect_to(root_path)
     end
     
+    it "shows error message (flash) if report doesn't exists for current user" do
+      delicious = Factory(:delicious, :user => @user)
+      Factory(:report, :user => Factory(:user), :service => delicious)
+      
+      get :show, :week => Date.today.cweek, :year => Date.today.year
+      
+      response.should be_redirect
+      response.should redirect_to(root_path)
+    end
+    
   end
 end

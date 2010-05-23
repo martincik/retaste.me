@@ -22,7 +22,10 @@ class ReportsController < ApplicationController
   end
   
   def show
-    report = Report.first(:conditions => { :year => params[:year].to_i, :week => params[:week].to_i })
+    report = Report.first(:conditions => { 
+      :year => params[:year].to_i, :week => params[:week].to_i,
+      :user_id => Context.user.id
+    })
     raise ActiveRecord::RecordNotFound if report.nil?
     
     respond_to do |format|
