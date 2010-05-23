@@ -6,7 +6,7 @@
 </tr>
 
 <tr>
-  <th><label for="user_username" class="mandatory"><%=t 'view.profile.username' %></label><span class="help">Your user name</span></th>
+  <th><label for="user_username" class="mandatory"><%=t 'view.profile.username' %></label></th>
   <td><%= f.text_field :username, :class => 'field' %></td>
   <td class="helper" rowspan="4">
     <%=raw t('common.mandatory_fields') %>
@@ -19,6 +19,6 @@
 </tr>
 
 <tr>
-  <th><label for="user_email" class="mandatory"><%=t 'common.email' %></label><span class="help">Valid email</span></th>
+  <th><label for="user_email" class="mandatory"><%=t 'common.email' %></label></th>
   <td><%= f.text_field :email, :class => 'field' %><span class="help">To this address we'll sent your weekly emails.</span></td>
 </tr>

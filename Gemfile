@@ -1,4 +1,5 @@
-gem "rails", "2.3.5"
+gem "rails", "2.3.6"
+gem "yajl-ruby"
 gem "rack"
 gem "mysql"
 gem "database_cleaner"

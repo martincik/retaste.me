@@ -5,7 +5,7 @@ class Report < ActiveRecord::Base
   belongs_to :service
   
   def to_html
-    email = ReportMailer.deliver_weekly_report(service.links_for_week, user.email)
+    email = ReportMailer.deliver_weekly_report(service.links_for_week, user, user.email)
     File.open(report_file_path, 'w') { |f| f.write(email.body) }
   end
   

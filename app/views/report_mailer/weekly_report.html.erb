@@ -1,4 +1,6 @@
 <div id="header">
+  Hello <%= @user.name %>,<br />
+  <br />
   This is your weekly retaste.me report for week <%= Date.today.cweek %> year <%= Date.today.year %>.
   You can find this report also online at <%= link_to report_url(:week => Date.today.cweek, :year => Date.today.year), report_url(:week => Date.today.cweek, :year => Date.today.year) %>
 </div>
