@@ -44,7 +44,7 @@ describe NotifierMailer do
   
   it "should send email to administrator about all generated exceptions during generating reports" do
     @expected.subject = "[retaste.me] [REPORT] [EXCEPTIONS] - #{Date.today.to_s}"
-    @expected.body    = read_fixture('exceptions')
+    @expected.body    = ERB.new(read_fixture('exceptions').to_s).result(binding)
     @expected.from    = 'no-reply@retaste.me'
     @expected.to      = 'ladislav.martincik@gmail.com'
     @expected.date    = Time.now

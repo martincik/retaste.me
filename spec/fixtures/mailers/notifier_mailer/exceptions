@@ -4,7 +4,7 @@
 <body>
 <h1>Notification from retaste.me:</h1>
 
-<h2>These exceptions were generated during week 20:</h2>
+<h2>These exceptions were generated during week <%= Date.today.cweek %>:</h2>
 <br><p>
   first exc
 </p>
