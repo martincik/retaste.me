@@ -50,7 +50,7 @@
 
 #footer {
 	font-family: "museo-sans-1","museo-sans-2", "Helvetica Neue", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
-	color: #333;
+	color: #777;
 	font-size: 12px;
 	text-align: center;
 	padding: 10px 0;
@@ -60,7 +60,7 @@
 #footer a,
 #footer a:hover,
 #footer a:visited {
-	color: #333;
+	color: #777;
 }
 
 .box {
