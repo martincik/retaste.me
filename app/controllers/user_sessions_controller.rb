@@ -4,6 +4,8 @@ class UserSessionsController < ApplicationController
 
   layout 'login'
 
+  caches_page :new
+  
   def new
   end
 
