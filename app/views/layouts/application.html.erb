@@ -36,7 +36,7 @@
       <div id="account-info">
         <% if Context.user -%>
           <%= link_to t('view.profile.title'), profile_url, :class => 'awesome small' %>
-          <%= link_to t('common.logout') + raw('&raquo;'), logout_path, :class => 'awesome small' %>
+          <%= link_to raw(t('common.logout') + '&raquo;'), logout_path, :class => 'awesome small' %>
         <% else -%>
           <%= link_to t('common.login'), login_path %>
         <% end -%>
