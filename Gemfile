@@ -8,7 +8,7 @@ gem "rpx_now"
 gem "nokogiri"
 gem "hpricot"
 gem "whenever"
-gem "laco-www-delicious", "0.3.4" # My own version with better API support
+gem "laco-www-delicious", "0.3.5" # My own version with better API support
 gem "css_parser"
 gem "mail_style"
 gem "adzap-ar_mailer"
