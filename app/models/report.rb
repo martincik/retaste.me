@@ -14,7 +14,7 @@ class Report < ActiveRecord::Base
     File.read(report_file_path) 
   end
   
-  def self.generate_reports_for_current_week
+  def self.generate_reports_for_current_week(debug = false)
     broken_reports = []
     exceptions = []
     num_reports = 0
@@ -23,15 +23,32 @@ class Report < ActiveRecord::Base
       Report.transaction do
         begin
           next if user.delicious.nil?
+          
           report = user.delicious.generate_current_week_report
-          report.to_html
-          if report.save
+          
+          cont = false; num_of_tries = 0
+          until cont do
+            begin
+              report.to_html
+              cont = true
+            rescue WWW::Delicious::HTTPError => e
+              exceptions << e
+              return if num_of_tries > 4
+              num_of_tries += 1
+              Rails.logger.error "Waiting 10s to get back to download data."
+              sleep 10 # Let's see if that helps!
+            end
+          end
+
+          if report.save 
             num_reports += 1
             Rails.logger.info "Generated report for user ID: #{user.id}, year: #{report.year}, week: #{report.week}"            
           else
             broken_reports << report
             Rails.logger.error "Couldn't save report for user ID: #{user.id}, Errors: #{report.errors}"
           end
+          
+          sleep 2
         rescue Exception => e
           exceptions << e
           Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e}"
@@ -40,7 +57,9 @@ class Report < ActiveRecord::Base
       end
     end
     
-    if broken_reports.empty? && exceptions.empty?
+    return if debug
+    
+    if num_reports > 0
       NotifierMailer.deliver_successfully_generated_reports(num_reports)
     end
     
