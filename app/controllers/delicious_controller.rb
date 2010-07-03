@@ -59,5 +59,21 @@ class DeliciousController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    unless @delicious = Context.user.delicious
+      flash[:warning] = 'You don\'t have delicious settings created. Please use new page.'
+      redirect_to new_delicious_url and return
+    end
+    
+    respond_to do |format|
+      if @delicious.destroy
+        flash[:notice] = 'Your delicious settings were successfully deleted.'
+        format.html { redirect_to(:controller => 'delicious', :action => 'index') }
+        format.xml  { head :ok }
+        format.json  { head :ok }
+      end
+    end
+  end
 
 end

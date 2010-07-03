@@ -1,12 +1,13 @@
 <div class="box">
   <h1 class="delicious">Delicious</h1>
   <p>
-    This service will deliver each Sunday your bookmarks from past week.
+    This service will deliver each Sunday your bookmarks from past week. (max. 100)
   </p>
   <p style="text-align: right;">
     <% if Context.user.delicious.nil? %>
       <%= link_to 'Create delicious settings', new_delicious_path, :class => 'awesome orange' %>
     <% else %>
+      <%= link_to 'Delete', delicious_path, :confirm => "Are you sure?", :method => :delete, :class => 'awesome red' %>
       <%= link_to 'Update delicious settings', edit_delicious_path, :class => 'awesome orange' %>
     <% end %>
   </p>
