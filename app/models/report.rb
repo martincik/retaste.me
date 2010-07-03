@@ -49,7 +49,7 @@ class Report < ActiveRecord::Base
           end
           
           Rails.logger.info "Sleeping for 2 seconds..."
-          sleep 10
+          sleep 2
         rescue Exception => e
           exceptions << e
           Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e}"

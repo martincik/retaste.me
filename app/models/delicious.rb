@@ -13,7 +13,7 @@ class Delicious < Service
   def links_for_week(week_number = Date.today.cweek)
     week_start, week_end = week_start_end(week_number)
     d = WWW::Delicious.new(login, password, :user_agent => 'retaste.me/1.0')
-    d.posts_all(:fromdt => week_start, :todt => week_end)
+    d.posts_all(:fromdt => week_start, :todt => week_end, :results => 100)
   end
   
   private
