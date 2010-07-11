@@ -19,12 +19,10 @@ class Report < ActiveRecord::Base
     exceptions = []
     num_reports = 0
     
-    User.all.each do |user|
+    Delicious.all.each do |delicious|
       Report.transaction do
         begin
-          next if user.delicious.nil?
-          
-          report = user.delicious.generate_current_week_report
+          report = delicious.generate_current_week_report
           
           cont = false; num_of_tries = 0
           until cont do
@@ -33,8 +31,9 @@ class Report < ActiveRecord::Base
               cont = true
             rescue WWW::Delicious::HTTPError => e
               exceptions << e
-              return if num_of_tries > 4
               num_of_tries += 1
+              cont = true if num_of_tries > 3
+              Rails.logger.error e.to_s
               Rails.logger.error "Waiting 10s to get back to download data."
               sleep 10 # Let's see if that helps!
             end
@@ -42,17 +41,17 @@ class Report < ActiveRecord::Base
 
           if report.save 
             num_reports += 1
-            Rails.logger.info "Generated report for user ID: #{user.id}, year: #{report.year}, week: #{report.week}"            
+            Rails.logger.info "Generated report for user ID: #{delicious.user.id}, year: #{report.year}, week: #{report.week}"            
           else
             broken_reports << report
-            Rails.logger.error "Couldn't save report for user ID: #{user.id}, Errors: #{report.errors}"
+            Rails.logger.error "Couldn't save report for user ID: #{delicious.user.id}, Errors: #{report.errors}"
           end
           
           Rails.logger.info "Sleeping for 2 seconds..."
           sleep 2
         rescue Exception => e
           exceptions << e
-          Rails.logger.error "Couldn't save report for user ID: #{user.id}, Exception: #{e}"
+          Rails.logger.error "Couldn't save report for user ID: #{delicious.user.id}, Exception: #{e}"
           raise ActiveRecord::Rollback
         end
       end
