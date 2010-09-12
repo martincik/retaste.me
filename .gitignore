@@ -16,3 +16,4 @@ tmp/webrat*
 .DS_Store
 data/reports
 config/smtp.yml
+*.swp
