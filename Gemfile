@@ -27,5 +27,4 @@ group :test do
   gem "mocha"
 end
 
-source "http://gemcutter.org"
-source "http://gems.github.com"
+source "http://rubygems.org"
