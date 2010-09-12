@@ -1,4 +1,4 @@
-gem "rails", "2.3.8"
+gem "rails", "2.3.9"
 gem "yajl-ruby"
 gem "rack"
 gem "mysql"
