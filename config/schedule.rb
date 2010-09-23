@@ -19,8 +19,11 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.hour do
-  command 'bundle exec ar_sendmail --max-age 0 -o --batch-size 200 -c "/mnt/app/retaste.me/current" -e "production"'
+
+job_type :bundled_exec, 'cd :path && RAILS_ENV=:environment /usr/bin/env bundle exec :task'
+
+every 10.minutes do
+  bundled_exec 'ar_sendmail --max-age 0 -o --batch-size 200 -c "/mnt/app/retaste.me/current" -e "production"'
 end
 
 every :sunday, :at => '7am' do # Use any day of the week or :weekend, :weekday
